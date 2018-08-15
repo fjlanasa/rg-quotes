@@ -20,8 +20,7 @@ let RateQueryParamsFormContainer = connect(
 
 RateQueryParamsFormContainer = reduxForm({
   form: "rateQueryParamsForm",
-  validate: validateForm,
-  touchOnBlur: false
+  validate: validateForm
 })(RateQueryParamsFormContainer);
 
 export default RateQueryParamsFormContainer;
