@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Field } from "redux-form";
 import InputField from "./../InputField/";
 import SelectField from "./../SelectField/";
-import * as inputFormatters from "./../../utils/inputFormatters";
+import * as formatters from "./../../utils/formatters";
 
 const RateQueryParamsForm = props => {
   return (
@@ -12,15 +12,15 @@ const RateQueryParamsForm = props => {
         component={InputField}
         type="text"
         placeholder="Loan Size"
-        normalize={inputFormatters.currencyStringToInt}
-        format={inputFormatters.intToCurrencyString}
+        normalize={formatters.currencyStringToInt}
+        format={formatters.intToCurrencyString}
       />
       <Field
         name="creditScore"
         component={InputField}
         type="text"
         placeholder="Credit Score"
-        normalize={inputFormatters.stringToNumber}
+        normalize={formatters.stringToNumber}
       />
       <Field name="propertyType" type="select" component={SelectField}>
         <option value="">-- Property Type -- </option>

@@ -1,11 +1,12 @@
-import * as inputFormatters from "./inputFormatters";
+import * as formatters from "./formatters";
 
-describe("inputFormatters", () => {
+describe("formatters", () => {
   const {
     intToCurrencyString,
     currencyStringToInt,
-    stringToNumber
-  } = inputFormatters;
+    stringToNumber,
+    percentToString
+  } = formatters;
   describe("intToCurrencyString", () => {
     it("should return empty string if value is null", () => {
       expect(intToCurrencyString(null)).toEqual("");
@@ -55,6 +56,16 @@ describe("inputFormatters", () => {
 
     it("should return number if value is a number string", () => {
       expect(stringToNumber("123")).toEqual(123);
+    });
+  });
+
+  describe("percentToString", () => {
+    it("should return string", () => {
+      expect(typeof percentToString(4.232)).toEqual("string");
+    });
+
+    it("should return the correct format", () => {
+      expect(percentToString(4.232)).toEqual("4.232%");
     });
   });
 });

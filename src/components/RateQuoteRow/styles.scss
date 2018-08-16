@@ -1,0 +1,9 @@
+@import "./../../styles/variables.scss";
+
+.row {
+  padding: 20px;
+
+  &:nth-child(odd) {
+    background: $light-gray;
+  }
+}

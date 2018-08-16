@@ -17,7 +17,6 @@ export const postRateRequest = values => {
       return res.json();
     })
     .then(data => {
-      debugger;
       if (data.requestId) {
         return Promise.resolve(data.requestId);
       } else {
