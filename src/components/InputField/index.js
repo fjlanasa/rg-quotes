@@ -6,14 +6,22 @@ const InputField = ({
   input,
   type,
   meta: { pristine, touched, error }
-}) => (
-  <div className="form-field">
-    <label>{label}</label>
-    <div className="input-container">
-      <input {...input} type={type} placeholder={placeholder} />
-      {touched && !pristine && error && <span className="error">{error}</span>}
+}) => {
+  let shouldDisplayError = touched && !pristine && error;
+  return (
+    <div className="form-field">
+      <div className="input-container">
+        <label>{label}</label>
+        <input
+          className={shouldDisplayError ? "error-field" : ""}
+          {...input}
+          type={type}
+          placeholder={placeholder}
+        />
+      </div>
+      {shouldDisplayError && <div className="error">{error}</div>}
     </div>
-  </div>
-);
+  );
+};
 
 export default InputField;

@@ -2,6 +2,7 @@
 
 .rate-quotes-container {
   overflow-x: scroll;
+  height: 100%;
 }
 
 .rate-quotes {
@@ -27,13 +28,14 @@
 
 .loading-indicator {
   display: inline-block;
+  height: 100%;
   position: relative;
   width: 64px;
   height: 64px;
 }
 
 .loading-indicator div {
-  background: #ffd216;
+  background: $yellow;
   display: inline-block;
   position: absolute;
   left: 6px;
@@ -58,8 +60,8 @@
 
 @keyframes loader {
   0% {
-    top: 6px;
-    height: 100px;
+    top: 0;
+    height: 90px;
   }
   50%, 100% {
     top: 40px;

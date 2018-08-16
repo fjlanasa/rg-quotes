@@ -6,16 +6,22 @@ const SelectField = ({
   label,
   type,
   meta: { pristine, touched, error }
-}) => (
-  <div className="form-field">
-    <label>{label}</label>
-    <div className="input-container">
-      <select className={input.value ? "active" : ""} {...input}>
-        {children}
-      </select>
-      {touched && !pristine && error && <span className="error">{error}</span>}
+}) => {
+  let selectClassName = "",
+    shouldDisplayError = touched && !pristine && error;
+  if (shouldDisplayError) selectClassName += "error-field ";
+  if (input.value) selectClassName += "active";
+  return (
+    <div className="form-field">
+      <div className="input-container">
+        <label>{label}</label>
+        <select className={selectClassName} {...input}>
+          {children}
+        </select>
+      </div>
+      {shouldDisplayError && <div className="error">{error}</div>}
     </div>
-  </div>
-);
+  );
+};
 
 export default SelectField;

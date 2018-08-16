@@ -1,26 +1,132 @@
+@import "./../../styles/variables.scss";
+
 form {
   margin-bottom: 40px;
 }
 
 
 .form-field {
-  align-items: center;
-  justify-content: flex-end;
-  display: flex;
   margin-bottom: 20px;
+  text-align: right;
 }
 
 .input-container {
-  flex-basis: 60%;
-  margin-left: 20px;
+  align-items: center;
+  justify-content: flex-end;
+  display: flex;
+}
+
+.error {
+  color: $red;
+  font-size: 12px;
+  margin-top: 10px;
 }
 
 .button-container {
   text-align: right;
 }
 
+input[type="text"],
+select {
+  appearance: none;
+  background-color: $white;
+  border: 1px solid $light-gray;
+  border-radius: 4px;
+  box-sizing: border-box;
+  flex-basis: 60%;
+  font-size: 16px;
+  margin-left: 20px;
+  min-width: 0;
+  overflow: hidden;
+  padding: 10px;
+  text-overflow: ellipsis;
+  transition: border-color 300ms ease-in-out;
+  width: 100%;
+
+  &::placeholder {
+    color: $gray;
+  }
+
+  &:hover {
+    border-color: shade($light-gray, 20%);
+  }
+
+  &:focus {
+    border-color: $black;
+    outline: none;
+
+    &::placeholder {
+      color: $light-gray;
+    }
+  }
+
+  &:disabled {
+    background-color: shade($white, 5%);
+    cursor: not-allowed;
+
+    &:hover {
+      border: 1px solid $light-gray;
+    }
+  }
+
+  &.error-field {
+    border-color: $red;
+  }
+}
+
+select {
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px);
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+
+  &:not(.active) {
+    color: $gray;
+  }
+}
+
 button[type="submit"] {
+  appearance: none;
+  background-color: $yellow;
+  border: 0;
+  border-radius: 4px;
+  color: $black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 15px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none !important;
+  transition: background-color 300ms ease-in-out;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
   width: 60%;
+
+  &:hover,
+  &:focus {
+    background-color: shade($yellow, 20%);
+    color: $black;
+  }
+
+  &:active {
+    background-color: shade($yellow, 40%);
+    color: $black;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: $yellow;
+    }
+  }
 }
 
 @media screen and (min-width: 768px) {

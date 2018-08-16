@@ -4,6 +4,12 @@ export const intToCurrencyString = value => {
     : "";
 };
 
+export const floatToCurrencyString = value => {
+  return value
+    ? "$" + value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
+    : "";
+};
+
 export const currencyStringToInt = value => {
   return value ? parseInt(value.replace(/[,\$]|/g, "")) : "";
 };
@@ -31,11 +37,11 @@ export const tableCellFormatters = {
   },
   closingCosts: {
     header: "Closing Costs",
-    cell: v => intToCurrencyString(parseInt(v))
+    cell: v => floatToCurrencyString(v)
   },
   monthlyPayment: {
     header: "Monthly Payment",
-    cell: v => intToCurrencyString(parseInt(v))
+    cell: v => floatToCurrencyString(v)
   },
   apr: {
     header: "APR",
