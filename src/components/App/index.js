@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./styles.css";
 import RateQueryParamsFormContainer from "./../../containers/RateQueryParamsForm";
 import RateQuotes from "./../../containers/RateQuotes";
 

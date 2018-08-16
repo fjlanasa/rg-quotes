@@ -1,0 +1,9 @@
+@mixin cell {
+  border: 1px solid black;
+  overflow: hidden;
+  padding: 8px;
+  max-width: 160px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}

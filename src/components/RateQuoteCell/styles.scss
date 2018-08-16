@@ -1,3 +1,7 @@
+@import "./../../styles/mixins.scss";
+
 .cell {
-  padding: 20px;
+  @include cell;
+  border-bottom: 0;
+  border-top: 0;
 }

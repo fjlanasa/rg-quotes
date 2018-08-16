@@ -1,5 +1,42 @@
 @import "variables.scss";
+@import "mixins.scss";
 
 body {
   color: $black;
+}
+
+input[type="text"] {
+  appearance: none;
+  background-color: $white;
+  border: 1px solid $light-gray;
+  border-radius: 4px;
+  box-sizing: border-box;
+  min-width: 0;
+  overflow: hidden;
+  padding: 10px;
+  text-overflow: ellipsis;
+  transition: border-color 300ms ease-in-out;
+  width: 100%;
+
+  &:hover {
+    border-color: shade($light-gray, 20%);
+  }
+
+  &:focus {
+    border-color: $black;
+    outline: none;
+
+    &::placeholder {
+      color: $light-gray;
+    }
+  }
+
+  &:disabled {
+    background-color: shade($white, 5%);
+    cursor: not-allowed;
+
+    &:hover {
+      border: 1px solid $light-gray;
+    }
+  }
 }

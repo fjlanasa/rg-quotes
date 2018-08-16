@@ -1,0 +1,11 @@
+@import "./../../styles/mixins.scss";
+
+.rate-quotes {
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.header {
+  @include cell;
+}

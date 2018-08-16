@@ -8,7 +8,7 @@ export default ({ rates }) => {
     <table className="rate-quotes">
       <tr>
         {keys.map((k, i) => {
-          return <th>{tableCellFormatters[k].header}</th>;
+          return <th className="header">{tableCellFormatters[k].header}</th>;
         })}
       </tr>
       <tbody>
