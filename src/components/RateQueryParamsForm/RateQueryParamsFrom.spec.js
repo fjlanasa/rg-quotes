@@ -4,16 +4,16 @@ import RateQueryParamsForm from './';
 
 describe("ContactFormComponent", () => {
 	let subject = null
-	let invalid, isFetchingRates, requestRates, handleSubmit;
+	let invalid, isFetchingRates, fetchRateQuotes, handleSubmit;
 	beforeEach(() => {
 		invalid = false,
     isFetchingRates = false,
 		handleSubmit = fn => fn
 	})
 	const buildSubject = () => {
-		requestRates = jest.fn()
+		fetchRateQuotes = jest.fn()
 		const props = {
-			requestRates,
+			fetchRateQuotes,
       isFetchingRates,
 			handleSubmit,
       invalid
@@ -33,9 +33,9 @@ describe("ContactFormComponent", () => {
     expect(subject.find("[type='submit']").is("[disabled]"))
   })
 
-  it("calls requestRates on submit", () => {
+  it("calls fetchRateQuotes on submit", () => {
     subject = buildSubject()
     subject.find('form').simulate('submit')
-    expect(requestRates).toBeCalled()
+    expect(fetchRateQuotes).toBeCalled()
   })
 })

@@ -6,7 +6,7 @@ import * as inputFormatters from "./../../utils/inputFormatters";
 
 const RateQueryParamsForm = (props) => {
   return (
-  <form onSubmit={props.handleSubmit((queryParams) => props.requestRates())}>
+  <form onSubmit={props.handleSubmit(props.fetchRateQuotes)}>
     <Field
       name="loanSize"
       component={InputField}
