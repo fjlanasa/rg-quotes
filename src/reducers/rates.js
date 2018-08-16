@@ -1,6 +1,6 @@
 import { REQUEST_RATES, RECEIVE_RATES } from "./../constants/actionTypes";
 
-const rates = (state = [], action) => {
+const rates = (state = null, action) => {
   switch (action.type) {
     case REQUEST_RATES:
       return [];

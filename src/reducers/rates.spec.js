@@ -3,7 +3,7 @@ import { REQUEST_RATES, RECEIVE_RATES } from "./../constants/actionTypes";
 
 describe("rates reducer", () => {
   it("should handle initial state", () => {
-    expect(rates(undefined, {})).toEqual([]);
+    expect(rates(undefined, {})).toEqual(null);
   });
 
   it("should handle REQUEST_RATES", () => {
