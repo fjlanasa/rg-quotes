@@ -7,4 +7,4 @@ export default combineReducers({
   isFetchingRates,
   rates,
   form: reduxFormReducer
-})
+});

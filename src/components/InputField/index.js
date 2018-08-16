@@ -8,10 +8,8 @@ const InputField = ({
 }) => (
   <div>
     <input {...input} type={type} placeholder={placeholder} />
-    {touched && !pristine && error &&
-      <span className="error">{error}</span>
-    }
+    {touched && !pristine && error && <span className="error">{error}</span>}
   </div>
-)
+);
 
 export default InputField;

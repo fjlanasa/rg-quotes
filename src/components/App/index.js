@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 import RateQueryParamsFormContainer from "./../../containers/RateQueryParamsForm";
 
 class App extends Component {
