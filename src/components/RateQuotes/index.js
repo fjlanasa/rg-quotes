@@ -4,7 +4,7 @@ import LoadingIndicator from "./LoadingIndicator";
 import "./styles.css";
 
 const RateQuotes = ({ rates, isFetchingRates }) => (
-  <div>
+  <div className="rate-quotes-container">
     {isFetchingRates ? (
       <LoadingIndicator />
     ) : rates.length ? (

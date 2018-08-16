@@ -1,0 +1,38 @@
+form {
+  margin-bottom: 40px;
+}
+
+
+.form-field {
+  align-items: center;
+  justify-content: flex-end;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  flex-basis: 60%;
+  margin-left: 20px;
+}
+
+.button-container {
+  text-align: right;
+}
+
+button[type="submit"] {
+  width: 60%;
+}
+
+@media screen and (min-width: 768px) {
+  .form-field-container {
+    display: flex;
+  }
+
+  .form-field-group {
+    width: 50%;
+  }
+
+  button[type="submit"] {
+    width: 30%;
+  }
+}
