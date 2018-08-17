@@ -9,7 +9,7 @@ git clone https://github.com/fjlanasa/rg-quotes.git
 cd rg-quotes
 npm install
 REACT_APP_RG_AUTH_KEY=[YOUR AUTH KEY] npm start
-Open [http://localhost:3000](http://localhost:3000) to view app in development mode in the browser.
+Open http://localhost:3000 to view app in development mode in the browser.
 ```
 
 Failure to prepend add `REACT_APP_RG_AUTH_KEY=[YOUR AUTH KEY]` will cause API calls to fail due to lack of authorization header.
