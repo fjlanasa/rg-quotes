@@ -1,7 +1,7 @@
 import React from "react";
-import RateListings from "./RateListings";
-import LoadingIndicator from "./LoadingIndicator";
-import NoRatesIndicator from "./NoRatesIndicator";
+import RateListings from "./../RateListings/";
+import LoadingIndicator from "./../LoadingIndicator/";
+import NoRatesIndicator from "./../NoRatesIndicator/";
 import "./styles.css";
 
 const RateQuotes = ({ rates, isFetchingRates }) => (
@@ -12,7 +12,9 @@ const RateQuotes = ({ rates, isFetchingRates }) => (
       <RateListings rates={rates} />
     ) : rates && !rates.length ? (
       <NoRatesIndicator />
-    ) : null}
+    ) : (
+      <div />
+    )}
   </div>
 );
 

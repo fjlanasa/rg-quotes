@@ -11,11 +11,11 @@ export const floatToCurrencyString = value => {
 };
 
 export const currencyStringToInt = value => {
-  return value ? parseInt(value.replace(/[,\$]|/g, "")) : "";
+  return value ? parseInt(value.replace(/[,$]|/g, ""), 10) : "";
 };
 
 export const stringToNumber = value => {
-  return value && parseInt(value) ? parseInt(value) : null;
+  return value && parseInt(value, 10) ? parseInt(value, 10) : null;
 };
 
 export const percentToString = value => {

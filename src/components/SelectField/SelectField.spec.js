@@ -76,6 +76,18 @@ describe("SelectField", () => {
     expect(errorField.text()).toEqual(error);
   });
 
+  it("select field should have class 'error-field' if there is error", () => {
+    let subject = buildElement();
+    let selectField = subject.find("select");
+    expect(selectField.hasClass("error-field")).toEqual(true);
+  });
+
+  it("select field should have class 'active' if value is not null", () => {
+    let subject = buildElement();
+    let selectField = subject.find("select");
+    expect(selectField.hasClass("active")).toEqual(true);
+  });
+
   it("should render children", () => {
     let subject = buildElement();
     expect(subject.find("option")).toHaveLength(3);

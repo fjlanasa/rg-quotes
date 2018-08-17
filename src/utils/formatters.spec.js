@@ -3,6 +3,7 @@ import * as formatters from "./formatters";
 describe("formatters", () => {
   const {
     intToCurrencyString,
+    floatToCurrencyString,
     currencyStringToInt,
     stringToNumber,
     percentToString
@@ -24,6 +25,26 @@ describe("formatters", () => {
       expect(intToCurrencyString(5555)).toEqual("$5,555");
 
       expect(intToCurrencyString(55555555)).toEqual("$55,555,555");
+    });
+  });
+
+  describe("floatToCurrencyString", () => {
+    it("should return empty string if value is null", () => {
+      expect(floatToCurrencyString(null)).toEqual("");
+    });
+
+    it("should return string if value is number", () => {
+      expect(typeof floatToCurrencyString(4.22)).toEqual("string");
+    });
+
+    it("should prepend '$' if value is number", () => {
+      expect(floatToCurrencyString(5)).toEqual("$5.00");
+    });
+
+    it("should add ',' as delimiter", () => {
+      expect(floatToCurrencyString(5555.0)).toEqual("$5,555.00");
+
+      expect(floatToCurrencyString(55555555)).toEqual("$55,555,555.00");
     });
   });
 
